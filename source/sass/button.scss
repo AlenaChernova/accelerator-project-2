@@ -1,0 +1,44 @@
+.button {
+  padding: 19px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: $white-100;
+  text-decoration: none;
+
+  background-color: $additional-100;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  transition: border-color 0.8s ease, background-color 0.4s ease, color 0.4s ease;
+
+  &:hover {
+    color: $active;
+
+    background-color: $white-100;
+    border-color: $active;
+  }
+
+  &:focus-visible {
+    color: $active;
+
+    background-color: $white-100;
+    border-color: transparent;
+  }
+
+  &:active {
+    color: $white-100;
+
+    background-color: $active;
+    border-color: transparent;
+  }
+}
+
+.button.is-disabled {
+  background-color: $disabled;
+  border-color: $disabled;
+
+  pointer-events: none;
+}
