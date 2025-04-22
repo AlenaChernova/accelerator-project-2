@@ -1,0 +1,241 @@
+.hero {
+  color: $white-100;
+  background-color: #668eba;
+}
+
+.hero__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.hero__item {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    background-image: linear-gradient(112.1deg, rgba(15, 20, 41, 0.33) 17.23%, rgba(15, 20, 41, 0) 94.93%);
+    inset: 0;
+  }
+}
+
+.hero__img-container {
+  position: absolute;
+  min-height: 568px;
+  overflow: hidden;
+  background-color: #668eba;
+  inset: 0;
+
+  @media (min-width: $tablet-width) {
+    min-height: 1034px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 800px;
+  }
+}
+
+.hero__img-container img {
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  align-content: center;
+  min-height: 568px;
+  padding: 60px 25px 76px;
+  gap: 15px;
+
+  @media (min-width: $tablet-width) {
+    min-height: 1034px;
+    padding: 40px 45px 100px;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-direction: column;
+    min-height: 800px;
+    padding: 200px 380px 80px 120px;
+    gap: 25px;
+  }
+}
+
+.hero__content h3 {
+  margin: 0;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 26px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    font-size: 56px;
+    line-height: 56px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 77px;
+    line-height: 77px;
+    text-align: left;
+  }
+}
+
+.hero__content p {
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 464px;
+    margin-left: 0;
+    text-align: left;
+  }
+}
+
+.hero__link {
+  min-width: 180px;
+  margin: 45px auto 0;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+}
+
+.hero__img-mini-container {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    position: absolute;
+    top: 157px;
+    right: 120px;
+    z-index: -1;
+  }
+}
+
+.hero__img-mini-container img {
+  display: block;
+  margin: 30px auto 0;
+}
+
+.hero__info-container {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+    gap: 10px;
+  }
+}
+
+.hero__info {
+  @media (min-width: $desktop-width) {
+    display: grid;
+    align-items: center;
+    padding: 13px 19px;
+    font-size: 12px;
+    line-height: 16px;
+    border: 1px solid $white-50;
+    gap: 8px;
+    grid-template-columns: 12px 1fr;
+  }
+
+  &--nights {
+    --background-image: url("../__spritemap#sprite-moon-view");
+  }
+
+  &--complexity {
+    --background-image: url("../__spritemap#sprite-level-view");
+  }
+
+  &::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-image: var(--background-image);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.hero .hero__pagination.swiper-pagination {
+  --swiper-pagination-bottom: 35px;
+  --swiper-pagination-bullet-horizontal-gap: 10px;
+
+  @media (min-width: $desktop-width) {
+    left: 50%;
+    width: 350px;
+    text-align: right;
+    transform: translateX(260px);
+    --swiper-pagination-bottom: 92px;
+  }
+}
+
+.hero .swiper-pagination-bullet {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 1px solid $white-100;
+  opacity: 1;
+  transition: background-color 0.5s ease;
+
+  @media (min-width: $tablet-width) {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background-color: #d9d9d9;
+  }
+
+  &:active {
+    background-color: $white-50;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    transform: translate(-50%, -50%);
+
+    @media (min-width: $tablet-width) {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+
+.hero .swiper-pagination-bullet:focus-visible {
+  outline: 1px solid $white-50;
+  outline-offset: 1px;
+}
+
+.hero .swiper-pagination-bullet-active {
+  background-color: $white-100;
+}

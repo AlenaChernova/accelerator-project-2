@@ -5,6 +5,11 @@
 // Базовые стили
 @import "./fonts";
 @import "./global";
+@import "./variables";
 
 // Блоки компонентов
 @import "./button";
+@import "./page";
+@import "./page-header";
+@import "./burger-button";
+@import "./hero";
